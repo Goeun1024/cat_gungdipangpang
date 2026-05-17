@@ -2,39 +2,60 @@ const cat = document.getElementById("cat");
 
 let timeout;
 
-// Shift 누를 때
+/* 궁디팡팡 시작 */
+function startPat(){
+
+  clearTimeout(timeout);
+
+  cat.classList.add("pat");
+
+  cat.src = "cat.png";
+
+}
+
+/* 궁디팡팡 종료 */
+function stopPat(){
+
+  cat.classList.remove("pat");
+
+  timeout = setTimeout(()=>{
+
+    cat.src = "cat1.png";
+
+  },1000);
+
+}
+
+/* 키보드 */
 document.addEventListener("keydown",(e)=>{
 
   if(e.key==="Shift"){
 
-    // 기존 타이머 취소
-    clearTimeout(timeout);
-
-    // 궁디팡팡 시작
-    cat.classList.add("pat");
-
-    // 궁디팡팡 사진
-    cat.src = "cat.png";
+    startPat();
 
   }
 
 });
 
-// Shift 뗐을 때
 document.addEventListener("keyup",(e)=>{
 
   if(e.key==="Shift"){
 
-    // 흔들기 멈춤
-    cat.classList.remove("pat");
-
-    // 1초 뒤 뒤돌아보기
-    timeout = setTimeout(()=>{
-
-      cat.src = "cat1.png";
-
-    },1000);
+    stopPat();
 
   }
+
+});
+
+/* 모바일 터치 */
+cat.addEventListener("touchstart",()=>{
+
+  startPat();
+
+});
+
+cat.addEventListener("touchend",()=>{
+
+  stopPat();
 
 });
