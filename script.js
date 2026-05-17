@@ -1,6 +1,10 @@
 const cat = document.getElementById("cat");
 
+const counter = document.getElementById("counter");
+
 let timeout;
+
+let count = 0;
 
 /* 궁디팡팡 시작 */
 function startPat(){
@@ -10,6 +14,19 @@ function startPat(){
   cat.classList.add("pat");
 
   cat.src = "cat.png";
+
+  /* 카운터 증가 */
+  count++;
+
+  counter.innerText =
+  "궁디팡팡 횟수 : " + count;
+
+  /* 모바일 진동 */
+  if(navigator.vibrate){
+
+    navigator.vibrate(50);
+
+  }
 
 }
 
