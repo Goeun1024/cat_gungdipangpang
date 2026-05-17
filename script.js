@@ -6,8 +6,14 @@ let timeout;
 
 let count = 0;
 
+let isPatting = false;
+
 /* 궁디팡팡 시작 */
 function startPat(){
+
+  if(isPatting) return;
+
+  isPatting = true;
 
   clearTimeout(timeout);
 
@@ -32,6 +38,8 @@ function startPat(){
 
 /* 궁디팡팡 종료 */
 function stopPat(){
+
+  isPatting = false;
 
   cat.classList.remove("pat");
 
