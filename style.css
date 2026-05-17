@@ -1,12 +1,14 @@
 body{
 
-  background:white;
+  background:#f3f3f3;
 
   display:flex;
   justify-content:center;
   align-items:center;
 
-  height:100vh;
+  min-height:100vh;
+  min-height:100dvh;
+
   margin:0;
 
   overflow:hidden;
@@ -14,6 +16,8 @@ body{
   font-family:sans-serif;
 
   touch-action:manipulation;
+
+  cursor:pointer;
 
 }
 
@@ -61,7 +65,7 @@ h2{
 
 #cat{
 
-  width:300px;
+  width:min(300px, 80vw);
 
   display:block;
 
@@ -72,6 +76,8 @@ h2{
   user-select:none;
 
   -webkit-user-drag:none;
+
+  -webkit-tap-highlight-color:transparent;
 
 }
 
